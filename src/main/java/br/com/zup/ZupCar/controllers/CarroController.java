@@ -20,4 +20,10 @@ public class CarroController {
     public void cadastrarCarro(@RequestBody CarroDTO carroDTO) {
         concessionaria.add(carroDTO);
     }
+
+    @GetMapping("/{nomeDoCarro}")
+    public CarroDTO exibirCarro(@PathVariable String nomeDoCarro) {
+        System.out.println(nomeDoCarro);
+        return new CarroDTO();
+    }
 }
