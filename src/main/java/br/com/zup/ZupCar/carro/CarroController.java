@@ -4,9 +4,7 @@ import br.com.zup.ZupCar.carro.dtos.CarroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -29,7 +27,7 @@ public class CarroController {
 
     @GetMapping("/{nomeDoCarro}")
     public CarroDTO exibirCarro(@PathVariable String nomeDoCarro) {
-        carroService.buscarCarro(nomeDoCarro);
+       return carroService.buscarCarro(nomeDoCarro);
     }
 
     @PutMapping("/{nomeDoCarro}")
@@ -38,7 +36,7 @@ public class CarroController {
         return carroService.atualizarCarro(nomeDoCarro, carroDTO);
     }
 
-    @DeleteMapping("/{nomeDoCarro")
+    /*@DeleteMapping("/{nomeDoCarro")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletarCarro(@PathVariable String nomeDoCarro) {
         for (CarroDTO carro : concessionaria) {
@@ -47,5 +45,5 @@ public class CarroController {
             }
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-    }
+    }*/
 }
