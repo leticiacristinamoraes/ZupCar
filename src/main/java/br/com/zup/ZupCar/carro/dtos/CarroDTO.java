@@ -1,4 +1,4 @@
-package br.com.zup.ZupCar.dtos;
+package br.com.zup.ZupCar.carro.dtos;
 
 public class CarroDTO {
     private String modelo;
